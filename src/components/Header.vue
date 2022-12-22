@@ -1,9 +1,9 @@
 <template>
   <div id="nav">
     <router-link to="/home">Home</router-link>
-    <router-link to="/add">Add Restaurent</router-link>
-<!--    <router-link to="/update">Update Restaurent</router-link>-->
-    <a @click="logOut" href="#">Logout</a>
+    <router-link to="/add">Add Restaurant</router-link>
+<!--    <router-link to="/update">Update Restaurant</router-link>-->
+    <a @click="logOut" href="/signup">Logout</a>
 
   </div>
 </template>
@@ -43,10 +43,9 @@ body{
   padding: 0;
 }
 #nav a:hover{
+  color:black;
   background-color: floralwhite;
-  border: 1px solid;
-  color:#222;
-  height: auto;
-  display: block;
+
+
 }
 </style>

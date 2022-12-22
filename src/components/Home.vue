@@ -2,9 +2,9 @@
   <div>
 
     <Header />
-    <h1>Hey {{name}}, Welcome to home</h1>
+    <h1>Hey {{name}}, Welcome to Home Page</h1>
     <table border="1">
-      <tr>
+      <tr id="bold">
         <td>Id</td>
         <td>Name</td>
         <td>Address</td>
@@ -17,8 +17,8 @@
         <td>{{item.name}}</td>
         <td>{{item.address}}</td>
         <td>{{item.contact}}</td>
-        <td><router-link :to="'/update/'+item.id">update</router-link></td>
-        <button @click="deleteRest(item.id)">Delete</button>
+        <td id="update"><router-link :to="'/update/'+item.id">Update</router-link></td>
+        <button id= "btn" @click="deleteRest(item.id)">Delete</button>
       </tr>
     </table>
   </div>
@@ -45,6 +45,7 @@ export default {
       if (result.status===200)
       {
       this.loadData()
+        alert("Deleted Successfully")
       }
     },
     async loadData()
@@ -92,5 +93,23 @@ td{
 table{
   margin-left: auto;
   margin-right: auto;
+}
+#bold{
+  font-weight: bold;
+}
+#update{
+  color: dodgerblue;
+}
+#btn{
+  color:white;
+  background-color: dodgerblue;
+  border-radius: 3px;
+  border: none;
+  height :25px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+#btn:hover{
+  background-color: orangered;
 }
 </style>

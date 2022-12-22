@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <h1>Hey user, welcome to the update Restaurant page.</h1>
+  <h1> {{name}} Welcome to the update Restaurant page.</h1>
   <form id="box">
     <input type="text" placeholder="Enter Name"  v-model="restaurant.name" name="name">
     <input type="text" placeholder="Enter Address" v-model="restaurant.address" name="address">
@@ -44,6 +44,7 @@ export default {
     },
      async mounted() {
         let user = localStorage.getItem("user-info");
+        this.name=JSON.parse(user).name;
         if (!user) {
           this.$router.push({name: 'signup'})
         }
